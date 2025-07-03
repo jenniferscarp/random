@@ -18,10 +18,25 @@
             background-color: #f8f9fa;
         }
         
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #2c3e50;
+            color: white;
+            padding: 15px 20px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.5rem;
+            font-weight: bold;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+        
         .container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 100px 20px 40px;
             text-align: center;
         }
         
@@ -175,10 +190,11 @@
     </style>
 </head>
 <body>
+    <div class="header">
+        JENNIFER CARP – SOFTWARE QA
+    </div>
+    
     <div class="container">
-        <h1>Jennifer Carp</h1>
-        <p class="tagline">Software QA</p>
-        
         <div class="main-content">
             <p class="intro">Hi. I'm Jennifer, and I will find your mistakes.</p>
             <a href="mailto:your-email@example.com" class="cta-button">Reach Out for Consulting Opportunities</a>
