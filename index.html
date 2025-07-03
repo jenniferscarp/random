@@ -3,336 +3,222 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jennifer Carp - Software QA</title>
+    <title>Professional Consulting Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cousine:wght@400;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Cousine', monospace;
+            background-color: #d8d8d8;
+            color: #e6e6e6;
             line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
+            min-height: 100vh;
         }
-        
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: #2c3e50;
-            color: white;
-            padding: 15px 20px;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 1.5rem;
-            font-weight: bold;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            z-index: 1000;
-        }
-        
+
         .container {
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 100px 20px 40px;
+            padding: 0 20px;
+        }
+
+        /* Header with LinkedIn Button */
+        header {
+            position: relative;
+            padding: 20px 0;
+            background-color: #d8d8d8;
+        }
+
+        .linkedin-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #d8d8d8;
+            color: #e6e6e6;
+            text-decoration: none;
+            padding: 12px 24px;
+            border: 2px solid #e6e6e6;
+            border-radius: 6px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .linkedin-button:hover {
+            background-color: #e6e6e6;
+            color: #d8d8d8;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Main Content */
+        .hero {
+            text-align: center;
+            padding: 80px 0;
+            margin-top: 60px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #e6e6e6;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .services {
+            padding: 80px 0;
             text-align: center;
         }
-        
-        h1 {
+
+        .services h2 {
             font-size: 2.5rem;
-            margin-bottom: 10px;
-            color: #2c3e50;
+            margin-bottom: 50px;
+            color: #e6e6e6;
         }
-        
-        .tagline {
-            font-size: 1.2rem;
-            color: #7f8c8d;
-            margin-bottom: 30px;
-        }
-        
-        .main-content {
-            background: white;
-            padding: 60px 40px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            margin-bottom: 40px;
-        }
-        
-        .intro {
-            font-size: 1.8rem;
-            color: #e74c3c;
-            font-weight: bold;
-            margin-bottom: 30px;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background-color: #3498db;
-            color: white;
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
-        
-        .cta-button:hover {
-            background-color: #2980b9;
-        }
-        
-        .qa-examples {
-            background: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
             margin-top: 40px;
         }
-        
-        .qa-examples h2 {
-            color: #2c3e50;
-            margin-bottom: 30px;
-            font-size: 2rem;
+
+        .service-card {
+            background-color: rgba(230, 230, 230, 0.1);
+            padding: 40px 30px;
+            border-radius: 10px;
+            border: 1px solid rgba(230, 230, 230, 0.2);
+            transition: transform 0.3s ease;
         }
-        
-        .carousel-container {
-            position: relative;
-            max-width: 600px;
-            margin: 0 auto;
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            background-color: rgba(230, 230, 230, 0.15);
         }
-        
-        .carousel-slide {
-            display: none;
-            background: #f8f9fa;
-            border: 1px solid #dee2e6;
-            border-radius: 8px;
-            padding: 25px;
-            margin: 10px 0;
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #e6e6e6;
         }
-        
-        .carousel-slide.active {
-            display: block;
-        }
-        
-        .bug-report {
-            text-align: left;
-        }
-        
-        .bug-title {
-            font-size: 1.3rem;
-            font-weight: bold;
-            color: #e74c3c;
-            margin-bottom: 15px;
-        }
-        
-        .bug-section {
-            margin-bottom: 15px;
-        }
-        
-        .bug-label {
-            font-weight: bold;
-            color: #2c3e50;
-        }
-        
-        .steps {
-            padding-left: 20px;
-            margin-top: 5px;
-        }
-        
-        .severity {
-            display: inline-block;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 0.9rem;
-            font-weight: bold;
-            color: white;
-        }
-        
-        .severity.high {
-            background-color: #e74c3c;
-        }
-        
-        .severity.medium {
-            background-color: #f39c12;
-        }
-        
-        .carousel-nav {
-            text-align: center;
-            margin-top: 20px;
-        }
-        
-        .nav-button {
-            background-color: #3498db;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            margin: 0 5px;
-            border-radius: 5px;
-            cursor: pointer;
+
+        .service-card p {
             font-size: 1rem;
+            line-height: 1.8;
         }
-        
-        .nav-button:hover {
-            background-color: #2980b9;
+
+        .contact {
+            padding: 80px 0;
+            text-align: center;
         }
-        
-        .nav-button:disabled {
-            background-color: #bdc3c7;
-            cursor: not-allowed;
+
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #e6e6e6;
         }
-        
-        .slide-counter {
-            margin-top: 10px;
-            color: #7f8c8d;
+
+        .contact p {
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .linkedin-button {
+                position: static;
+                display: block;
+                width: fit-content;
+                margin: 0 auto 20px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero {
+                padding: 40px 0;
+                margin-top: 20px;
+            }
+
+            .services h2,
+            .contact h2 {
+                font-size: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        JENNIFER CARP – SOFTWARE QA
-    </div>
-    
+    <header>
+        <a href="https://www.linkedin.com/in/jcarp/" class="linkedin-button" target="_blank">
+            REACH OUT FOR CONSULTING OPPORTUNITIES
+        </a>
+    </header>
+
     <div class="container">
-        <div class="main-content">
-            <p class="intro">Hi. I'm Jennifer, and I will find your mistakes.</p>
-            <a href="mailto:your-email@example.com" class="cta-button">Reach Out for Consulting Opportunities</a>
-        </div>
-        
-        <div class="qa-examples">
-            <h2>Examples of Issues I Find</h2>
-            
-            <div class="carousel-container">
-                <div class="carousel-slide active">
-                    <div class="bug-report">
-                        <div class="bug-title">Mobile Login Button Unresponsive</div>
-                        <div class="bug-section">
-                            <div class="bug-label">Steps to Reproduce:</div>
-                            <ol class="steps">
-                                <li>Navigate to login page on mobile device (iOS Safari)</li>
-                                <li>Enter valid username and password</li>
-                                <li>Tap "Login" button</li>
-                            </ol>
-                        </div>
-                        <div class="bug-section">
-                            <div class="bug-label">Expected Result:</div>
-                            <div>User should be redirected to dashboard page</div>
-                        </div>
-                        <div class="bug-section">
-                            <div class="bug-label">Actual Result:</div>
-                            <div>Button appears to be tapped but no action occurs. User remains on login page.</div>
-                        </div>
-                        <div class="bug-section">
-                            <div class="bug-label">Severity:</div>
-                            <span class="severity high">High</span>
-                        </div>
-                    </div>
+        <section class="hero">
+            <h1>Professional Consulting Services</h1>
+            <p>Delivering strategic insights and innovative solutions to drive your business forward. Expert guidance tailored to your unique challenges and opportunities.</p>
+        </section>
+
+        <section class="services">
+            <h2>Services Offered</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Strategic Planning</h3>
+                    <p>Comprehensive analysis and strategic roadmap development to align your business objectives with market opportunities and competitive advantages.</p>
                 </div>
-                
-                <div class="carousel-slide">
-                    <div class="bug-report">
-                        <div class="bug-title">Search Returns Irrelevant Results</div>
-                        <div class="bug-section">
-                            <div class="bug-label">Steps to Reproduce:</div>
-                            <ol class="steps">
-                                <li>Navigate to main search page</li>
-                                <li>Enter search term "red shoes"</li>
-                                <li>Click search button</li>
-                            </ol>
-                        </div>
-                        <div class="bug-section">
-                            <div class="bug-label">Expected Result:</div>
-                            <div>Results should show products containing "red" and "shoes"</div>
-                        </div>
-                        <div class="bug-section">
-                            <div class="bug-label">Actual Result:</div>
-                            <div>Results include blue shirts, green pants, and other unrelated items</div>
-                        </div>
-                        <div class="bug-section">
-                            <div class="bug-label">Severity:</div>
-                            <span class="severity medium">Medium</span>
-                        </div>
-                    </div>
+                <div class="service-card">
+                    <h3>Process Optimization</h3>
+                    <p>Streamline operations and improve efficiency through data-driven process analysis and implementation of best practices.</p>
                 </div>
-                
-                <div class="carousel-slide">
-                    <div class="bug-report">
-                        <div class="bug-title">Form Validation Error Message Missing</div>
-                        <div class="bug-section">
-                            <div class="bug-label">Steps to Reproduce:</div>
-                            <ol class="steps">
-                                <li>Navigate to contact form</li>
-                                <li>Leave email field empty</li>
-                                <li>Click submit button</li>
-                            </ol>
-                        </div>
-                        <div class="bug-section">
-                            <div class="bug-label">Expected Result:</div>
-                            <div>Clear error message should appear: "Email address is required"</div>
-                        </div>
-                        <div class="bug-section">
-                            <div class="bug-label">Actual Result:</div>
-                            <div>Form highlights field in red but provides no explanatory text</div>
-                        </div>
-                        <div class="bug-section">
-                            <div class="bug-label">Severity:</div>
-                            <span class="severity medium">Medium</span>
-                        </div>
-                    </div>
+                <div class="service-card">
+                    <h3>Technology Integration</h3>
+                    <p>Guide digital transformation initiatives and technology adoption to enhance productivity and competitive positioning.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Market Analysis</h3>
+                    <p>In-depth market research and competitive analysis to inform strategic decisions and identify growth opportunities.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Change Management</h3>
+                    <p>Support organizational transformation with structured change management methodologies and stakeholder engagement strategies.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Performance Metrics</h3>
+                    <p>Develop and implement key performance indicators and measurement systems to track progress and drive continuous improvement.</p>
                 </div>
             </div>
-            
-            <div class="carousel-nav">
-                <button class="nav-button" id="prevBtn" onclick="changeSlide(-1)">← Previous</button>
-                <button class="nav-button" id="nextBtn" onclick="changeSlide(1)">Next →</button>
-                <div class="slide-counter">
-                    <span id="currentSlide">1</span> of <span id="totalSlides">3</span>
-                </div>
-            </div>
-        </div>
+        </section>
+
+        <section class="contact">
+            <h2>Ready to Transform Your Business?</h2>
+            <p>Let's discuss how we can work together to achieve your strategic objectives and drive sustainable growth for your organization.</p>
+        </section>
     </div>
-    
-    <script>
-        let currentSlideIndex = 0;
-        const slides = document.querySelectorAll('.carousel-slide');
-        const totalSlides = slides.length;
-        
-        document.getElementById('totalSlides').textContent = totalSlides;
-        
-        function showSlide(index) {
-            slides.forEach(slide => slide.classList.remove('active'));
-            slides[index].classList.add('active');
-            
-            document.getElementById('currentSlide').textContent = index + 1;
-            document.getElementById('prevBtn').disabled = index === 0;
-            document.getElementById('nextBtn').disabled = index === totalSlides - 1;
-        }
-        
-        function changeSlide(direction) {
-            currentSlideIndex += direction;
-            
-            if (currentSlideIndex < 0) {
-                currentSlideIndex = 0;
-            } else if (currentSlideIndex >= totalSlides) {
-                currentSlideIndex = totalSlides - 1;
-            }
-            
-            showSlide(currentSlideIndex);
-        }
-        
-        // Initialize
-        showSlide(0);
-        
-        // Auto-advance slides every 10 seconds
-        setInterval(() => {
-            if (currentSlideIndex < totalSlides - 1) {
-                changeSlide(1);
-            } else {
-                currentSlideIndex = 0;
-                showSlide(0);
-            }
-        }, 10000);
-    </script>
 </body>
 </html>
