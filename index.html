@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jennifer Carp - Software QA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+        }
+        
+        .main-content {
+            background: white;
+            padding: 60px 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+        
+        .intro {
+            font-size: 1.8rem;
+            color: #e74c3c;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .cta-button:hover {
+            background-color: #2980b9;
+        }
+        
+        .qa-examples {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-top: 40px;
+        }
+        
+        .qa-examples h2 {
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+        
+        .carousel-container {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .carousel-slide {
+            display: none;
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 10px 0;
+        }
+        
+        .carousel-slide.active {
+            display: block;
+        }
+        
+        .bug-report {
+            text-align: left;
+        }
+        
+        .bug-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #e74c3c;
+            margin-bottom: 15px;
+        }
+        
+        .bug-section {
+            margin-bottom: 15px;
+        }
+        
+        .bug-label {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .steps {
+            padding-left: 20px;
+            margin-top: 5px;
+        }
+        
+        .severity {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .severity.high {
+            background-color: #e74c3c;
+        }
+        
+        .severity.medium {
+            background-color: #f39c12;
+        }
+        
+        .carousel-nav {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .nav-button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .nav-button:hover {
+            background-color: #2980b9;
+        }
+        
+        .nav-button:disabled {
+            background-color: #bdc3c7;
+            cursor: not-allowed;
+        }
+        
+        .slide-counter {
+            margin-top: 10px;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Jennifer Carp</h1>
+        <p class="tagline">Software QA</p>
+        
+        <div class="main-content">
+            <p class="intro">Hi. I'm Jennifer, and I will find your mistakes.</p>
+            <a href="mailto:your-email@example.com" class="cta-button">Reach Out for Consulting Opportunities</a>
+        </div>
+        
+        <div class="qa-examples">
+            <h2>Examples of Issues I Find</h2>
+            
+            <div class="carousel-container">
+                <div class="carousel-slide active">
+                    <div class="bug-report">
+                        <div class="bug-title">Mobile Login Button Unresponsive</div>
+                        <div class="bug-section">
+                            <div class="bug-label">Steps to Reproduce:</div>
+                            <ol class="steps">
+                                <li>Navigate to login page on mobile device (iOS Safari)</li>
+                                <li>Enter valid username and password</li>
+                                <li>Tap "Login" button</li>
+                            </ol>
+                        </div>
+                        <div class="bug-section">
+                            <div class="bug-label">Expected Result:</div>
+                            <div>User should be redirected to dashboard page</div>
+                        </div>
+                        <div class="bug-section">
+                            <div class="bug-label">Actual Result:</div>
+                            <div>Button appears to be tapped but no action occurs. User remains on login page.</div>
+                        </div>
+                        <div class="bug-section">
+                            <div class="bug-label">Severity:</div>
+                            <span class="severity high">High</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-slide">
+                    <div class="bug-report">
+                        <div class="bug-title">Search Returns Irrelevant Results</div>
+                        <div class="bug-section">
+                            <div class="bug-label">Steps to Reproduce:</div>
+                            <ol class="steps">
+                                <li>Navigate to main search page</li>
+                                <li>Enter search term "red shoes"</li>
+                                <li>Click search button</li>
+                            </ol>
+                        </div>
+                        <div class="bug-section">
+                            <div class="bug-label">Expected Result:</div>
+                            <div>Results should show products containing "red" and "shoes"</div>
+                        </div>
+                        <div class="bug-section">
+                            <div class="bug-label">Actual Result:</div>
+                            <div>Results include blue shirts, green pants, and other unrelated items</div>
+                        </div>
+                        <div class="bug-section">
+                            <div class="bug-label">Severity:</div>
+                            <span class="severity medium">Medium</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-slide">
+                    <div class="bug-report">
+                        <div class="bug-title">Form Validation Error Message Missing</div>
+                        <div class="bug-section">
+                            <div class="bug-label">Steps to Reproduce:</div>
+                            <ol class="steps">
+                                <li>Navigate to contact form</li>
+                                <li>Leave email field empty</li>
+                                <li>Click submit button</li>
+                            </ol>
+                        </div>
+                        <div class="bug-section">
+                            <div class="bug-label">Expected Result:</div>
+                            <div>Clear error message should appear: "Email address is required"</div>
+                        </div>
+                        <div class="bug-section">
+                            <div class="bug-label">Actual Result:</div>
+                            <div>Form highlights field in red but provides no explanatory text</div>
+                        </div>
+                        <div class="bug-section">
+                            <div class="bug-label">Severity:</div>
+                            <span class="severity medium">Medium</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="carousel-nav">
+                <button class="nav-button" id="prevBtn" onclick="changeSlide(-1)">← Previous</button>
+                <button class="nav-button" id="nextBtn" onclick="changeSlide(1)">Next →</button>
+                <div class="slide-counter">
+                    <span id="currentSlide">1</span> of <span id="totalSlides">3</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        let currentSlideIndex = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+        const totalSlides = slides.length;
+        
+        document.getElementById('totalSlides').textContent = totalSlides;
+        
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[index].classList.add('active');
+            
+            document.getElementById('currentSlide').textContent = index + 1;
+            document.getElementById('prevBtn').disabled = index === 0;
+            document.getElementById('nextBtn').disabled = index === totalSlides - 1;
+        }
+        
+        function changeSlide(direction) {
+            currentSlideIndex += direction;
+            
+            if (currentSlideIndex < 0) {
+                currentSlideIndex = 0;
+            } else if (currentSlideIndex >= totalSlides) {
+                currentSlideIndex = totalSlides - 1;
+            }
+            
+            showSlide(currentSlideIndex);
+        }
+        
+        // Initialize
+        showSlide(0);
+        
+        // Auto-advance slides every 10 seconds
+        setInterval(() => {
+            if (currentSlideIndex < totalSlides - 1) {
+                changeSlide(1);
+            } else {
+                currentSlideIndex = 0;
+                showSlide(0);
+            }
+        }, 10000);
+    </script>
+</body>
+</html>
